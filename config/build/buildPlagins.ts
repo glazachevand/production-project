@@ -1,11 +1,11 @@
 import webpack from "webpack";
-import path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import { BuildOptions } from "./types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 
 // возвращает список плагинов
-export function buildPlagins({ paths }: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlagins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
   return [
     new HtmlWebpackPlugin({
       template: paths.html,
@@ -15,5 +15,10 @@ export function buildPlagins({ paths }: BuildOptions): webpack.WebpackPluginInst
       filename: "css/[name].[contenthash:8].css",
       chunkFilename: "css/[name].[contenthash:8].css",
     }),
+    new webpack.DefinePlugin({
+      __IS_DEV__: JSON.stringify(isDev),
+    }),
+    new ReactRefreshWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
   ];
 }

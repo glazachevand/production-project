@@ -1,0 +1,23 @@
+{
+  "create react component": {
+    "scope": "typescript",
+    "prefix": "rfc",
+    "body": [
+      "import React from \"react\";",
+      "import { classNames } from \"shared/lib/classNames\";",
+      "import cls from \"./Navbar.module.scss\";",
+      "",
+      "interface NavbarProps {",
+      "  className?: string;",
+      "}",
+      "",
+      "export const Navbar = ({ className }: NavbarProps) => {",
+      "  return (",
+      "    <div className={classNames(cls.navbar)}>",
+      "    </div>",
+      "  );",
+      "};"
+    ],
+    "description": "create react component"
+  }
+}
