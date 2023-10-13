@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -29,7 +30,10 @@ module.exports = {
     // отступы не в jsx
     indent: [2, 2],
     // расширенияЮ где разрешен jsx
-    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
+    'react/jsx-filename-extension': [
+      2,
+      { extensions: ['.js', '.jsx', '.tsx'] },
+    ],
     // отключаем правило для ошибки на абсолютные пути
     'import/no-unresolved': 'off',
     // отключаем ошибку на предпочтительность дефолтного экспорта
@@ -53,6 +57,8 @@ module.exports = {
     'no-underscore-dangle': 'off',
     // будет подсвечивать отсутствие переводов только в jsx
     'i18next/no-literal-string': ['error', { markupOnly: true }],
+    // игнорирование большой длины в комментариях
+    'max-len': ['error', { ignoreComments: true }],
   },
   // перечислим глобальные переменные
   globals: {
