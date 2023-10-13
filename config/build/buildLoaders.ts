@@ -1,18 +1,18 @@
-import { RuleSetRule } from "webpack";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import { BuildOptions } from "./types/config";
+import { RuleSetRule } from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { BuildOptions } from './types/config';
 
 export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
   const svgLoader = {
     test: /\.svg$/,
-    use: ["@svgr/webpack"],
+    use: ['@svgr/webpack'],
   };
 
   const fileLoader = {
     test: /\.(png|jpe?g|gif|woff2|woff)$/i,
     use: [
       {
-        loader: "file-loader",
+        loader: 'file-loader',
       },
     ],
   };
@@ -21,14 +21,14 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     test: /\.(js|jsx|tsx)$/,
     exclude: /node_modules/,
     use: {
-      loader: "babel-loader",
+      loader: 'babel-loader',
       options: {
-        presets: ["@babel/preset-env"],
+        presets: ['@babel/preset-env'],
         plugins: [
           [
-            "i18next-extract",
+            'i18next-extract',
             {
-              locales: ["ru", "en"],
+              locales: ['ru', 'en'],
               keyAsDefaultValue: true,
             },
           ],
@@ -41,25 +41,25 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     test: /\.s[ac]ss$/i,
     use: [
       // Creates `style` nodes from JS strings
-      isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       // Translates CSS into CommonJS
       {
-        loader: "css-loader",
+        loader: 'css-loader',
         options: {
           modules: {
-            auto: (resPath: string) => Boolean(resPath.includes(".module.")),
-            localIdentName: isDev ? "[path][name]__[local]--[hash:base64:5]" : "[hash:base64:8]",
+            auto: (resPath: string) => Boolean(resPath.includes('.module.')),
+            localIdentName: isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]',
           },
         },
       },
       // Compiles Sass to CSS
-      "sass-loader",
+      'sass-loader',
     ],
   };
 
   const typescriptLoader = {
     test: /\.tsx?$/,
-    use: "ts-loader",
+    use: 'ts-loader',
     exclude: /node_modules/,
   };
 
