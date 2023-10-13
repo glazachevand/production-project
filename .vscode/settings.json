@@ -1,4 +1,6 @@
 {
   "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"],
-  "i18n-ally.keystyle": "nested"
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.sourceLanguage": "ru",
+  "i18next.i18nPaths": "c:/Work/REACT_PROJECTS/production-project/public/locales,c:/Work/REACT_PROJECTS/production-project/src/shared/config/i18n"
 }
