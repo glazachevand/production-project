@@ -7,8 +7,6 @@ const AboutPage: React.FC = () => {
   return (
     <div>
       {t('О сайте')}
-      {' '}
-      Страница
     </div>
   );
 };

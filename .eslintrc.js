@@ -6,6 +6,7 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'airbnb',
+    'plugin:i18next/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -18,6 +19,7 @@ module.exports = {
   plugins: [
     'react',
     '@typescript-eslint',
+    'i18next',
   ],
   rules: {
     // отступы в jsx - 2-правило работает (или "warning"), к-во пробелов - 2
@@ -49,6 +51,8 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     // разрешим нижние подчеркивания в названиях переменных
     'no-underscore-dangle': 'off',
+    // будет подсвечивать отсутствие переводов только в jsx
+    'i18next/no-literal-string': ['error', { markupOnly: true }],
   },
   // перечислим глобальные переменные
   globals: {
