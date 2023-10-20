@@ -56,12 +56,28 @@ module.exports = {
     // разрешим нижние подчеркивания в названиях переменных
     'no-underscore-dangle': 'off',
     // будет подсвечивать отсутствие переводов только в jsx
-    'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'i18next/no-literal-string': [
+      'error',
+      {
+        markupOnly: true,
+        ignoreAttribute: ['data-testid'],
+      },
+    ],
     // игнорирование большой длины в комментариях
-    'max-len': ['error', { ignoreComments: true }],
+    'max-len': ['error', { ignoreComments: true, code: 100 }],
+    // игнорировать конец строки
+    'linebreak-style': 'off',
   },
   // перечислим глобальные переменные
   globals: {
     __IS_DEV__: true,
   },
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off',
+      },
+    },
+  ],
 };
