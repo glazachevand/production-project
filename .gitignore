@@ -2,3 +2,4 @@
 /node_modules
 production-project*.zip
 *.fig
+/storybook-static
