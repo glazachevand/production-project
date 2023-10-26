@@ -8,7 +8,7 @@ const MainPage: React.FC = () => {
   return (
     <div>
       {t('Главная страница')}
-      <Counter />
+      {/* <Counter /> */}
     </div>
   );
 };
