@@ -3,7 +3,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { NotFoundPage } from './NotFoundPage';
 
-const meta = {
+const meta: Meta<typeof NotFoundPage> = {
   title: 'pages/NotFoundPage',
   component: NotFoundPage,
   parameters: {
@@ -11,7 +11,7 @@ const meta = {
   },
   tags: ['autodocs'],
 
-} satisfies Meta<typeof NotFoundPage>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;

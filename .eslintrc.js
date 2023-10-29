@@ -62,7 +62,7 @@ module.exports = {
       },
     ],
     // игнорирование большой длины в комментариях
-    'max-len': ['error', { ignoreComments: true, code: 100 }],
+    'max-len': ['error', { ignoreComments: true, code: 140 }],
     // игнорировать конец строки
     'linebreak-style': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',

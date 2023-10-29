@@ -4,7 +4,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 
 import { Sidebar } from './Sidebar';
 
-const meta = {
+const meta: Meta<typeof Sidebar> = {
   title: 'widgets/Sidebar',
   component: Sidebar,
   parameters: {
@@ -15,7 +15,7 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 
-} satisfies Meta<typeof Sidebar>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;

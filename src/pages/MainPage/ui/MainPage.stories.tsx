@@ -3,7 +3,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import MainPage from './MainPage';
 
-const meta = {
+const meta: Meta<typeof MainPage> = {
   title: 'pages/MainPage',
   component: MainPage,
   parameters: {
@@ -11,7 +11,7 @@ const meta = {
   },
   tags: ['autodocs'],
 
-} satisfies Meta<typeof MainPage>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;

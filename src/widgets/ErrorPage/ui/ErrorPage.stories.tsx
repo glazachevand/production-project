@@ -4,7 +4,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 
 import { ErrorPage } from './ErrorPage';
 
-const meta = {
+const meta: Meta<typeof ErrorPage> = {
   title: 'widgets/ErrorPage',
   component: ErrorPage,
   parameters: {
@@ -12,7 +12,7 @@ const meta = {
   },
   tags: ['autodocs'],
 
-} satisfies Meta<typeof ErrorPage>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
