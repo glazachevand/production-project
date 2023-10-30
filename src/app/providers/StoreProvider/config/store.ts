@@ -6,9 +6,11 @@ import { createReducerManager } from './reducerManager';
 
 export function createReduxStore(
   initialState?: StateSchema,
+  asyncReducers?: ReducersMapObject<StateSchema>,
 ) {
   // Отавляем только те редюсеры, которые обязательны
   const rootReducers: ReducersMapObject<StateSchema> = {
+    ...asyncReducers,
     counter: counterReducer,
     user: userReducer,
   };
