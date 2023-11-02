@@ -75,6 +75,7 @@ module.exports = {
   // перечислим глобальные переменные
   globals: {
     __IS_DEV__: true,
+    __API__: true,
   },
   overrides: [
     {
